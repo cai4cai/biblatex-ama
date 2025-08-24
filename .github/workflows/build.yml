@@ -98,6 +98,6 @@ jobs:
           # Adding MiKTeX bin folder to PATH and to GITHUB_PATH
           echo "$BIN_DIR_WINDOWS" >> $GITHUB_PATH
           export PATH="$BIN_DIR_WINDOWS_UNIX:$PATH"
-
+          export TEXINPUTS="..:/$TEXINPUTS"
           eval "$COMMAND"
         working-directory: examples
