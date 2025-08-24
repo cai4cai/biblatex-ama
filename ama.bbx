@@ -20,7 +20,9 @@
     \usebibmacro{issue+date}%
     \setunit{\addsemicolon\addspace}%
     \printfield{volume}%
-    (\printfield{number})%
+    \iffieldundef{number}
+    {}
+    {\printtext{(\printfield{number})}}%
     \setunit{\addcolon\space}%
     \usebibmacro{issue}%
     \newunit%
