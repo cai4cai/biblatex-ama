@@ -39,12 +39,3 @@
 % Bib list with num-dot format
 \DeclareFieldFormat{labelnumberwidth}{#1\adddot}
 \DeclareFieldFormat{shorthandwidth}{\mkbibparens{#1}}
-
-% Make author names Title Case
-\def\FirstLetterUppercase#1{\expandafter\FirstLetterUppercase@i#1 \@nil}
-\def\FirstLetterUppercase@i#1#2 #3\@nil{%
-  \MakeUppercase{#1}\MakeLowercase{#2}
-  \ifx\relax#3\relax\def\next@i{}\else\def\next@i{\expandafter\FirstLetterUppercase@i#3\@nil}\fi%
-  \next@i}
-
-\InitializeBibliographyStyle{\renewcommand*{\mkbibnamefamily}[1]{\FirstLetterUppercase{#1}}}
