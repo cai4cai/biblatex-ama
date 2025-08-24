@@ -8,7 +8,22 @@
 % No punctuation inside names
 \renewcommand*{\revsdnamepunct}{}
 
-% Cite with round parenthesis
+% Make numeric citations superscript
+\let\cite\supercite
+
+\DeclareCiteCommand{\textcite}
+  {\usebibmacro{prenote}}
+  {%
+    % Print only the family name of the first author
+    \printnames[first][1-1]{labelname}%
+    \ifthenelse{\value{listcount}<\value{liststop}}
+      {\addspace et\addabbrvspace al\addspace}{}%
+    % Superscript numeric citation
+    \supercite{\thefield{entrykey}}%
+  }
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
+% Cite with round parenthesis in case parencire is requested explicitly
 \DeclareOuterCiteDelims{parencite}{\bibopenparen}{\bibcloseparen}
-\DeclareOuterCiteDelimsAlias{cite}{parencite}
-\DeclareInnerCiteDelims{textcite}{\bibopenparen}{\bibcloseparen}

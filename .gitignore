@@ -2,6 +2,7 @@
 *.bcf
 *.blg
 *.bbl-SAVE-ERROR
+*.bcf-SAVE-ERROR
 *.fdb_latexmk
 *.log
 *.aux
