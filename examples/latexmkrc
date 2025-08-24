@@ -1,5 +1,9 @@
-# Prepend parent directory to TEXINPUTS so LaTeX finds the biblatex style files
-$ENV{'TEXINPUTS'} = "../:" . ($ENV{'TEXINPUTS'} || "");
+# Determine path separator depending on OS
+my $sep = ($^O eq 'MSWin32') ? ';' : ':';
+
+
+# Prepend parent directory to TEXINPUTS so LaTeX finds the style files
+$ENV{'TEXINPUTS'} = "..//$sep" . ($ENV{'TEXINPUTS'} || "");
 
 # Always create PDFs and set default engine to LuaLaTeX.
 $pdf_mode = 4;
