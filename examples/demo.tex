@@ -1,0 +1,29 @@
+\documentclass[a4paper,12pt]{article}
+
+% Load biblatex with your style
+\usepackage[style=ama]{biblatex}
+
+% Add bibliography database
+\addbibresource{sample.bib}
+% Also use the standard xampl.bib (often distributed with TeX Live / MikTeX)
+\addbibresource{xampl.bib}
+
+\begin{document}
+
+\section*{Demonstration of the AMA biblatex style}
+
+Here is a citation to a book \cite{whole-collection}.  
+An article example \parencite{article-minimal}.  
+A tech report \cite{techreport-minimal}.  
+An inproceedings entry \cite{inproceedings-full}.  
+
+\subsection*{Multiple citations}
+Sometimes you want to cite more than one work at once:  
+\parencite{article-minimal,techreport-minimal,whole-collection}.
+
+\subsection*{Citation with first author name}
+\textcite{Lamport:Book:1989} is an other example of a book.
+
+\printbibliography
+
+\end{document}

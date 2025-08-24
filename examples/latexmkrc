@@ -1,0 +1,8 @@
+# Prepend parent directory to TEXINPUTS so LaTeX finds the biblatex style files
+$ENV{'TEXINPUTS'} = "../:" . ($ENV{'TEXINPUTS'} || "");
+
+# Always create PDFs and set default engine to LuaLaTeX.
+$pdf_mode = 4;
+
+# Tell biber to also search the repo root for .bib files
+$biber = 'biber --input-directory=.. %O %B';

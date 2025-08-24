@@ -1,0 +1,10 @@
+*.bbl
+*.bcf
+*.blg
+*.bbl-SAVE-ERROR
+*.fdb_latexmk
+*.log
+*.aux
+*.fls
+*.run.xml
+.DS_Store
